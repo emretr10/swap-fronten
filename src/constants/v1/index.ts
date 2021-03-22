@@ -1,0 +1,20 @@
+import { Interface } from '@ethersproject/abi'
+import { ChainId } from '@mochiswap/bsdk'
+import V1_EXCHANGE_ABI from './v1_exchange.json'
+import V1_FACTORY_ABI from './v1_factory.json'
+
+///here is the old pancake factory 0xC07d4604400139108BbdB3076636365A385879eF
+const V1_FACTORY_ADDRESSES: { [chainId in ChainId]: string } = {
+  // [ChainId.MAINNET]: '0x62b07ddc05fe0df61a75ea665687d721480d8af4',
+  // [ChainId.ROPSTEN]: '0x9c83dCE8CA20E9aAF9D3efc003b2ea62aBC08351',
+  // [ChainId.RINKEBY]: '0xf5D915570BC477f9B8D6C0E980aA81757A3AaC36',
+  // [ChainId.GÖRLI]: '0x6Ce570d02D73d4c384b46135E87f8C592A8c86dA',
+  // [ChainId.KOVAN]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+  [ChainId.MAINNET]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+  [ChainId.BSCTESTNET]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30'
+}
+
+const V1_FACTORY_INTERFACE = new Interface(V1_FACTORY_ABI)
+const V1_EXCHANGE_INTERFACE = new Interface(V1_EXCHANGE_ABI)
+
+export { V1_FACTORY_ADDRESSES, V1_FACTORY_INTERFACE, V1_FACTORY_ABI, V1_EXCHANGE_INTERFACE, V1_EXCHANGE_ABI }
